@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Advance House Price Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict House Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="MSSubClass" placeholder="MSSubClass" required="required" /><br>
+        <input type="text" name="MSZoning" placeholder="MSZoning" required="required" /><br>
+        <input type="text" name="Neighborhood" placeholder="Neighborhood" required="required" /><br>
+        <input type="text" name="OverallQual" placeholder="OverallQual" required="required" /><br>
+        <input type="text" name="YearRemodAdd" placeholder="YearRemodAdd" required="required" /><br>
+        <input type="text" name="RoofStyle" placeholder="RoofStyle" required="required" /><br>
+        <input type="text" name="BsmtQual" placeholder="BsmtQual" required="required" /><br>
+        <input type="text" name="BsmtExposure" placeholder="BsmtExposure" required="required" /><br>
+        <input type="text" name="CentralAir" placeholder="CentralAir" required="required" /><br>
+        <input type="text" name="1stFlrSF" placeholder="1stFlrSF" required="required" /><br>
+        <input type="text" name="GrLivArea" placeholder="GrLivArea" required="required" /><br>
+        <input type="text" name="BsmtFullBath" placeholder="BsmtFullBath" required="required" /><br>
+        <input type="text" name="KitchenQual" placeholder="KitchenQual" required="required" /><br>
+        <input type="text" name="Fireplaces" placeholder="Fireplaces" required="required" /><br>
+        <input type="text" name="GarageFinish" placeholder="GarageFinish" required="required" /><br>
+        <input type="text" name="GarageCars" placeholder="GarageCars" required="required" /><br>
+        <input type="text" name="PavedDrive" placeholder="PavedDrive" required="required" /><br>
+        <input type="text" name="SaleCondition" placeholder="SaleCondition" required="required" /><br>
+​
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
